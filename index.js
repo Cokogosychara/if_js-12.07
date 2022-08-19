@@ -128,13 +128,14 @@
 
 
 // const year = prompt ('введите год', '');
-// if (!((yr % 4) || (!(yr % 100) && (yr % 400)))){
-//     alert ('высокосный');
-// }else{
-//     alert ('не высокосный');
-// }
-// ily = function(yr) {return !((yr % 4) || (!(yr % 100) && (yr % 400)));};
+// (year % 4 === 0 ) && (year % 100 !== 0 ) ?  alert ('высокосный') : alert ('не высокосный');
 
+// const year = prompt ('введите год', '');
+// if ((year % 4 === 0 ) && (year % 100 !== 0 )){
+//     alert ('высокосный')
+// } else{
+//     alert ('не высокосный')
+// }
 
 
 // 5. Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
@@ -142,10 +143,9 @@
 // let userNum = prompt ('Введите пяти значное число','12345');
 
 // const num5 = userNum % 10;
-// const num4 = (userNum - num5) % 100 ; 
-// const num3 = (userNum - (num5 + num4)) % 1000; 
-// const num2 = (userNum - (num5 + num4 + num3)) % 10000; 
-// const num1 = (userNum - (num5 + num4 + num3 + num2)) / 100000;
+// userNum = (userNum - num5) % 100;
+// alert (userNum);
+
 
 // if (num5 === num1 / 100000 || num2 / 1000 === num4 / 10 ){
 //   alert ('число является палиндромом');
@@ -220,4 +220,287 @@
 // месяц, год, а также високосный годы
 
 
-    
+
+let birthDates = prompt ('Введите (день, месяц, год) ','31121998');
+if (birthDates === null || birthDates === '' ){
+    alert ('Отменино');
+}else if(birthDates){
+    const num8 = birthDates % 10; 
+    birthDates = (birthDates - num8) / 10;
+    const num7 = birthDates % 10; 
+    birthDates = (birthDates - num7) / 10;
+    const num6 = birthDates % 10; 
+    birthDates = (birthDates - num6) / 10;
+    const num5 = birthDates % 10; 
+    birthDates = (birthDates - num5) / 10;
+    const num4 = birthDates % 10; 
+    birthDates = (birthDates - num4) / 10;
+    const num3 = birthDates % 10; 
+    birthDates = (birthDates - num3) / 10;
+    const num2 = birthDates % 10; 
+    const num1 = (birthDates - num2) / 10;
+    let day = +(String(num1) + String(num2));
+    let month = +(String(num3) + String(num4));
+    let year = +(String(num5) + String(num6) + String(num7) + String(num8));
+    debugger
+    if ((year % 4 === 0 ) && (year % 100 !== 0 )){
+        if (month === 01){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day > 31){
+                day = 01;
+                if (day === 01){
+                    month +=1;
+                }
+            }
+        }else if (month === 02){
+            day < 30;
+            if (day < 29){
+                day +=1;
+            }else if (day > 29){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 03){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day > 31){
+                day = 01;
+                if (day === 01){
+                    month +=1;
+                }
+            }
+        }else if (month === 04){
+            day < 31;
+            if (day < 30){
+                day += 1;
+            }else if (day > 30){
+                day = 01;
+                if (day === 01){
+                    month +=1;
+                }
+            }
+        }else if (month === 05){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day > 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 06){
+            day < 31;
+            if (day < 30){
+                day +=1;
+            }else if (day > 30){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 07){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day > 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 08){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day > 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 09){
+            day < 31;
+            if (day < 30){
+                day +=1;
+            }else if (day > 30){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 10){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day > 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 11){
+            day < 31;
+            if (day < 30){
+                day +=1;
+            }else if (day > 30){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 12){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day === 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                    if (month > 12){
+                        month = 01;
+                        if(month = 1){
+                            year +=1;
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        if (month === 01){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day === 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 02){
+            day < 29;
+            if (day < 28){
+                day +=1;
+            }else if (day === 28){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 03){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day === 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 04){
+            day < 31;
+            if (day < 30){
+                day +=1;
+            }else if (day === 30){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 05){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day === 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 06){
+            day < 31;
+            if (day < 30){
+                day +=1;
+            }else if (day === 30){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 07){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day === 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 08){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day === 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 09){
+            day < 31;
+            if (day < 30){
+                day +=1;
+            }else if (day === 30){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 10){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day === 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 11){
+            day < 31;
+            if (day < 30){
+                day +=1;
+            }else if (day === 30){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                }
+            }
+        }else if (month === 12){
+            day < 32;
+            if (day < 31){
+                day +=1;
+            }else if (day === 31){
+                day = 01;
+                if (day === 01){
+                    month += 1;
+                    if (month > 12){
+                        month = 01;
+                        if(month = 1){
+                            year +=1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    alert(' ваша дата ' + day + ' , ' + month + ' , ' + year);
+} else {
+  alert ('Ебать как тяжело');
+}
