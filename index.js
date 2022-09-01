@@ -843,9 +843,8 @@
 // let num1;
 // let num2;
 // let result = 0;
-// let amount = 0;
 
-// for (let index = 1; index > amount; index) {
+// for (let index = 1; index; index) {
 //     num1 = +prompt ( 'введите число', '' );
 //     num2 = +prompt ( 'введите число', '' );
 //     sign = prompt ( 'введите знак', '+, -, /, *' );
@@ -871,26 +870,17 @@
 //             alert('попробуй те еще раз!');
 //             break;
 //     }
-//     index = prompt ('хотите решить еще один пример? \n нажмите ок или отмена',);
-//     switch (index) {
-//         case '':
-//             index = 1;
-//             break; 
-//             default:
-//                 alert('ебать как тяжело');
-//                 index = 0;
-//                 break;
-//     }
+//     index = confirm ('хотите решить еще один пример?');
+  
 // }
 
 
 // let num1;
 // let num2;
 // let result = 0;
-// let amount = 1;
-// let index = 0
+// let index = 1
 
-// while (index < amount){
+// while (index) {
 //     num1 = +prompt ( 'введите число', '' );
 //     num2 = +prompt ( 'введите число', '' );
 //     sign = prompt ( 'введите знак', '+, -, /, *' );
@@ -898,34 +888,26 @@
 //     switch (sign) {
 //         case '+':
 //             result = num1 + num2;
-//             alert(result);
+//             alert (result);
 //             break;
 //             case '-':
 //                 result = num1 - num2;
-//                 alert(result);
+//                 alert (result);
 //                 break;
 //                 case '/':
 //                 result = num1 / num2;
-//                 alert(result);
+//                 alert (result);
 //                 break;
 //                 case '*':
 //                 result = num1 * num2;
-//                 alert(result);
+//                 alert (result);
 //                 break;
 //                 default:
 //                     alert('попробуй те еще раз!');
 //                     break;
 //                 }
-//                 index = prompt ('хотите решить еще один пример? \n нажмите ок или отмена',);
-//                 switch (index) {
-//                     case '':
-//                         index = 0;
-//                         break; 
-//                         default:
-//                             alert('ебать как тяжело');
-//                             index = 1;
-//                             break;
-//                 }
+//                 index = confirm ('хотите решить еще один пример?');
+               
 // }
 
 
@@ -934,8 +916,7 @@
 // let num1;
 // let num2;
 // let result = 0;
-// let amount = 1;
-// let index = 0
+// let index = 1;
 // do {
 //     num1 = +prompt ( 'введите число', '' );
 //     num2 = +prompt ( 'введите число', '' );
@@ -961,18 +942,9 @@
 //                     alert('попробуй те еще раз!');
 //                     break;
 //                 }
-//                 index = prompt ('хотите решить еще один пример? \n нажмите ок или отмена',);
-//                 switch (index) {
-//                     case '':
-//                         index = 0;
-//                         break; 
-//                         default:
-//                             alert('ебать как тяжело');
-//                             index = 1;
-//                             break;
-//                 }
+//                 index = confirm ('хотите решить еще один пример?');
 
-// } while ( index < amount );
+// } while ( index  );
 
 // 7. Зациклить вывод дней недели таким образом: «День недели.
 // Хотите увидеть следующий день?» и так до тех пор, пока
