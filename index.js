@@ -1222,3 +1222,446 @@
 //     console.log(space + star);
 //     i++;
 // }
+
+// ______________________________________________________
+// 1. Написать функцию, которая принимает 2 числа и возвращает -1,
+// если первое меньше, чем второе; 1 – если первое 
+// больше, чем второе; и 0 – если числа равны.
+// 2. Написать функцию, которая вычисляет факториал переданного ей числа.
+// 3. Написать функцию, которая принимает три отдельные 
+// цифры и превращает их в одно число. Например: цифры 
+// 1, 4, 9 превратятся в число 149.
+// 4. Написать функцию, которая принимает длину и ширину 
+// прямоугольника и вычисляет его площадь. Если в функцию 
+// передали 1 параметр, то она вычисляет площадь квадрата.
+// 5. Написать функцию, которая проверяет, является ли переданное
+// ей число совершенным. Совершенное число – это 
+// число, равное сумме всех своих собственных делителей.
+// 6. Написать функцию, которая принимает минимальное и 
+// максимальное значения для диапазона, и выводит только 
+// те числа из диапазона, которые являются совершенными. 
+// Используйте написанную ранее функцию, чтобы узнавать, 
+// совершенное число или нет.
+// 7. Написать функцию, которая принимает время (часы, минуты, секунды)
+// и выводит его на экран в формате «чч:мм:сс».
+// Если при вызове функции минуты и/или секунды не были 
+// переданы, то выводить их как 00.
+// 8. Написать функцию, которая принимает часы, минуты и 
+// секунды и возвращает это время в секундах.
+// 9. Написать функцию, которая принимает количество секунд, 
+// переводит их в часы, минуты и секунды и возвращает в 
+// виде строки «чч:мм:сс».
+// 10*. Написать функцию, которая считает разницу между датами. 
+// Функция принимает 6 параметров, которые описывают 2 
+// даты, и возвращает результат в виде строки «чч:мм:сс». При 
+// выполнении задания используйте функции из предыдущих 2-х заданий:
+// сначала обе даты переведите в секунды, 
+// узнайте разницу в секундах, а потом разницу переведите 
+// обратно в «чч:мм:сс»
+
+
+
+// 1. Написать функцию, которая принимает 2 числа и возвращает -1,
+// если первое меньше, чем второе; 1 – если первое 
+// больше, чем второе; и 0 – если числа равны.
+
+
+// const comparison = function (num1, num2) {
+//     if (num1 < num2) {
+//         return -1;
+//     } else if (num1 > num2) {
+//         return 1;
+//     } else {
+//         return 0;
+//     } 
+// }
+
+// const result = comparison (2, 2);
+// console.log(result);
+
+
+// const input1 = prompt('введите число для сравнения');
+// const input2 = prompt('введите число для сравнения');
+
+// const comparison = function (num1, num2) {
+//     if (num1 < num2) {
+//         return -1;
+//     } else if (num1 > num2) {
+//         return 1;
+//     } else {
+//         return 0;
+//     } 
+// }
+
+// const result = comparison (input1, input2);
+// alert(result);
+
+
+
+// function comparison (num1, num2) {
+//     if (num1 < num2) {
+//         return -1;
+//     } else if (num1 > num2) {
+//         return 1;
+//     } else {
+//         return 0;
+//     } 
+// }
+
+// 2. Написать функцию, которая вычисляет факториал переданного ей числа.
+
+// const factorial = function (num) { 
+//     let factorial = num; 
+//     for (let index = 1; index < num; index++) {
+//         factorial = factorial * index;
+//     }
+//     return factorial;
+// }
+
+// const result = factorial (5);
+// console.log(result);
+
+
+
+
+// const factorial = function (num) { 
+//     return (num != 1) ? num * factorial(num - 1) : 1;
+// }
+// const result = factorial (5);
+// console.log(result);
+
+
+
+
+// const userNun = prompt ('введиите число что бы вычеслить факториал');
+
+// const factorial = function (num) { 
+//     let factorial = num; 
+//     for (let index = 1; index < num; index++) {
+//         factorial = factorial * index;
+//     }
+//     return factorial;
+// }
+
+// const result = factorial (userNun);
+// alert(result);
+
+// 3. Написать функцию, которая принимает три отдельные 
+// цифры и превращает их в одно число. Например: цифры 
+// 1, 4, 9 превратятся в число 149.
+
+// const oneNumber = function (num1,num2,num3) {
+//     return String(num1) + String(num2) + String(num3);
+// }
+
+// console.log (oneNumber(1,2,3));
+
+// const oneNumber = function (num1,num2,num3) {
+//     result = String(num1) + String(num2) + String(num3);
+//     return result;
+// }
+// console.log (oneNumber(1,2,3));
+
+
+
+// 4. Написать функцию, которая принимает длину и ширину 
+// прямоугольника и вычисляет его площадь. Если в функцию 
+// передали 1 параметр, то она вычисляет площадь квадрата.
+
+// const square = function (num1,num2) {
+//    if (!isNaN(num1) && !isNaN(num2) && num1 !== 0 && num2 !== 0 ) {
+//        return num1 * num2;
+//    } else if (num1 === 0 && num2 === 0 ) {
+//        return 'вычесление не возможно';
+//    } else if ( num1 === 0 ) {
+//        return num2 * num2;
+//    } else {
+//     return num1 * num1;
+//    }
+// }
+
+// const result = square (3,0);
+// alert (result);
+
+// 5. Написать функцию, которая проверяет, является ли переданное
+// ей число совершенным. Совершенное число – это 
+// число, равное сумме всех своих собственных делителей.
+
+// const perfectNumber = function (num) {
+//     let divider = 0;
+//     let summa = 0;
+//     const result = num;
+//     while (divider < num - 1) { 
+//         divider++; 
+//         if( result % divider === 0 ) {
+//             summa += divider;
+//             console.log(summa);
+//         }    
+// }
+// if (summa === result) {
+//     perfect =  'число ' + result + ' совершенное';
+//     return perfect;
+// } 
+// }
+// const result = perfectNumber(6);
+// console.log (result);
+
+// const perfectNumber = function (num) {
+//     let divider;
+//     let summa = 0;
+//     for ( let index = 1; index < num - 1; index++) { 
+//         divider = num % index;
+//         if (divider === 0 ) {
+//             summa += index;
+//             console.log(summa);
+//         }    
+// }
+// if (summa === num) {
+//     perfect =  'число ' + num + ' совершенное';
+//     return perfect;
+// } 
+// }
+// const result = perfectNumber(496);
+// console.log (result);
+
+
+
+
+// 6. Написать функцию, которая принимает минимальное и 
+// максимальное значения для диапазона, и выводит только 
+// те числа из диапазона, которые являются совершенными. 
+// Используйте написанную ранее функцию, чтобы узнавать, 
+// совершенное число или нет.
+
+// const perfectNumber = function (num) {
+//     const result = num;
+//     for (let index = 2; index <= result ; index++) {
+//         let divider = 0;
+//         let summa = 0;
+//         while (divider < index - 1) { 
+//             divider++; 
+//             if( index % divider === 0 ) {
+//                 summa += divider;
+//             }    
+//         }
+//         if (summa === index) {
+//             const perfect =  'число ' + index + ' совершенное';
+//             console.log(perfect);
+//         } 
+//     }
+// }
+// const result = perfectNumber(8128);
+
+// const perfectNumber = function (num) {
+//     const result = num;
+//     for (let i = 2; i <= result ; i++) {
+//         let divider = 0;
+//         let summa = 0;
+//         for ( let j = 0; j < i - 1; j++) { 
+//             divider = i % j;
+//             if(divider === 0 ) {
+//                 summa += j;
+//             }    
+//         }
+//         if (summa === i) {
+//             const perfect =  'число ' + i + ' совершенное';
+//             console.log(perfect);
+//         } 
+//     }
+// }
+// const result = perfectNumber(496);
+
+
+
+// 7. Написать функцию, которая принимает время (часы, минуты, секунды)
+// и выводит его на экран в формате «чч:мм:сс».
+// Если при вызове функции минуты и/или секунды не были 
+// переданы, то выводить их как 00.
+
+
+// const timeFunct = function (num1,num2,num3) {
+//     isNaN(num3) || num3 === 0 ? num3 = '00' : num3 = num3;
+//     isNaN(num2) || num2 === 0 ? num2 = '00' : num2 = num2;
+//     return String(num1) + 'ч:' + String(num2) + 'м:' + String(num3) + 'с';
+//  }
+// console.log(timeFunct(12));
+
+
+// const hour = +prompt ('введите какой сейчас час', '11');
+// const minutes = +prompt ('введите минуты', '11');
+// const second = +prompt ('введите секунды', '11');
+
+// const timeFunct = function (num1,num2,num3) {
+//     isNaN(num1) || num1 === 0 ? num1 = '00' : num1 = num1;
+//     isNaN(num2) || num2 === 0 ? num2 = '00' : num2 = num2;
+//     isNaN(num3) || num3 === 0 ? num3 = '00' : num3 = num3;
+//     return mesege = String(num1) + 'ч:' + String(num2) + 'м:' + String(num3) + 'с';
+//  }
+// console.log(timeFunct(hour,minutes,second));
+
+
+// 8. Написать функцию, которая принимает часы, минуты и 
+// секунды и возвращает это время в секундах.
+
+// const returnsSecond = function (num1,num2,num3) {
+//    return ( num1 * 60 + num2 ) * 60 + num3 + 'c';
+// }
+// console.log(returnsSecond(12,13,40));
+
+// const hour = +prompt ('введите какой сейчас час', '11');
+// const minutes = +prompt ('введите минуты', '11');
+// const second = +prompt ('введите секунды', '11');
+
+// const returnsSecond = function (num1,num2,num3) {
+//     isNaN(num1) ? num1 = 0 : num1 = num1;
+//     isNaN(num2) ? num2 = 0 : num2 = num2;
+//     isNaN(num3) ? num3 = 0 : num3 = num3;
+//    return ( num1 * 60 + num2 ) * 60 + num3 + 'c';
+// }
+// console.log(returnsSecond(hour,minutes,second));
+
+
+// 9. Написать функцию, которая принимает количество секунд, 
+// переводит их в часы, минуты и секунды и возвращает в 
+// виде строки «чч:мм:сс».
+
+// const returnsTames = function ( num ) {
+//    const hour = Math.floor(num / 60 / 60);
+//    const minutes = Math.floor(num / 60) - hour * 60;
+//    const second = num % 60;
+//    return mesege = String(hour) + 'ч:' + String(minutes) + 'м:' + String(second) + 'с';
+   
+// }
+// console.log(returnsTames (4378));
+
+// 10*. Написать функцию, которая считает разницу между датами. 
+// Функция принимает 6 параметров, которые описывают 2 
+// даты, и возвращает результат в виде строки «чч:мм:сс». При 
+// выполнении задания используйте функции из предыдущих 2-х заданий:
+// сначала обе даты переведите в секунды, 
+// узнайте разницу в секундах, а потом разницу переведите 
+// обратно в «чч:мм:сс»
+
+// const retursDaysDifference = function (num1,num2) {
+//     let difference;
+//     const dey1Second = num1 * 24 * 60 * 60;
+//     const dey2Second = num2 * 24 * 60 * 60;
+//     dey1Second < dey2Second ? difference = dey2Second - dey1Second :difference = dey1Second - dey2Second ;
+   
+//     const hour = Math.floor(difference / 60 / 60);
+//     const minutes = Math.floor(difference / 60) - hour * 60;
+//     const second = difference % 60;
+//     return mesege = String(hour) + 'ч:' + String(minutes) + 'м:' + String(second) + 'с';
+// }
+
+// console.log(retursDaysDifference(0,3));
+// ______________________________________________________________________
+
+// 4.* Определить количество цифр в введенном числе. Использовать % 
+
+// let userNum = +prompt ('введите число','1234');
+// let nums = 0;
+// let result = 1;
+
+// if ( userNum === null || userNum === '' || userNum === 0 ) {
+//     result = 0;
+// } 
+// for (result; result < userNum; result++) {
+//     if (userNum !== null && userNum !== '' ) {
+//         nums = userNum % 10;
+//         userNum = (userNum - nums) / 10;  
+//     } 
+// }
+// alert ('количество чисел равно ' +result );
+
+//ИСПРАВИЛ
+// let userNum = +prompt ('введите число','1234');
+// let nums = 0;
+// let result = 0;
+
+// while (true) {
+//     if (userNum !== 0) {
+//         nums = userNum % 10;
+//         userNum = (userNum - nums) / 10;  
+//         result++; 
+//     } else {
+//         alert ('количество чисел равно ' +result );
+//         break;
+//     } 
+// }
+
+
+
+// let userNum = +prompt ('введите число','1234');
+// let nums = 0;
+// let result = 0;
+// do {
+//     if (userNum !== 0) {
+//         nums = userNum % 10;
+//         userNum = (userNum - nums) / 10;  
+//         result++; 
+//     } else {
+//         alert ('количество чисел равно ' +result );
+//         break;
+//     }  
+    
+// } while ( true );
+
+
+
+// _________________________________________________________
+
+// 1.Есть три числа. Найти среди них найбольшее.
+
+// const num1 = 12;
+// const num2 = 15234;
+// const num3 = 1120;
+
+// if (num1 > num2 && num1 > num3) {
+//     console.log(num1);
+// } else if (num2 > num1 && num2 > num3){
+//     console.log(num2);
+// } else console.log(num3);
+
+// (num1 > num2 && num1 > num3) 
+// ? console.log(num1) 
+// : (num2 > num1 && num2 > num3) 
+// ? console.log(num2)
+// : console.log(num3);
+
+
+
+// 2.Есть две кредитные карты. На одной есть деньги(x) и на второй(y).
+// Написать программу, которая будет сообщать сможем ли мы купить 
+// товар за n-денег. С карты на карту деньги переводить нельзя. 
+// Суммировать их тоже нельзя.
+
+
+// const caredit1 = 500;
+// const caredit2 = 500;
+// const n = 1000;
+
+// if ( n < caredit1 || n < caredit2 || n - caredit1 <= caredit2) console.log('покупеп успешна');
+// else console.log('ищи денюжку не хватает');
+
+// 3.Есть кредитная карта. Есть возраст пользователя.
+// Он сможет купить фалос, только если он совершеннолетний и хватает денег.
+
+// const credit = 100;
+// const earUser = 18;
+// const sum = 200;
+
+// if (earUser >= 18 && credit > sum ) console.log('дрочи на здоровье');
+// else console.log('подрочишь огурцом');
+
+
+// 4.Пользователь вводит число. Если число четное или трехзначное,
+// сообщить ему, что он красавчик. В другом случае сообщить, что
+// он будет батраком в Польше.
+
+
+// const userNum = prompt ('введи число ботрак, смотри не проеби!');
+
+// if (userNum % 2 === 0 ||  userNum >= 100 ) {
+//     alert('поздравляю ты не батрак');
+// } else alert('пиздуй на строку батрак');
