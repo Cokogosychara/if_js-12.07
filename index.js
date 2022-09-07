@@ -1504,7 +1504,7 @@
 // секунды и возвращает это время в секундах.
 
 // const returnsSecond = function (num1,num2,num3) {
-//    return ( num1 * 60 + num2 ) * 60 + num3 + 'c';
+//    return ( num1 * 60 + num2 ) * 60 + num3;
 // }
 // console.log(returnsSecond(12,13,40));
 
@@ -1542,19 +1542,34 @@
 // узнайте разницу в секундах, а потом разницу переведите 
 // обратно в «чч:мм:сс»
 
-// const retursDaysDifference = function (num1,num2) {
-//     let difference;
-//     const dey1Second = num1 * 24 * 60 * 60;
-//     const dey2Second = num2 * 24 * 60 * 60;
-//     dey1Second < dey2Second ? difference = dey2Second - dey1Second :difference = dey1Second - dey2Second ;
-   
-//     const hour = Math.floor(difference / 60 / 60);
-//     const minutes = Math.floor(difference / 60) - hour * 60;
-//     const second = difference % 60;
-//     return mesege = String(hour) + 'ч:' + String(minutes) + 'м:' + String(second) + 'с';
-// }
+const returnsSecond = function (num1,num2,num3) {
+    return ( num1 * 60 + num2 ) * 60 + num3;
+ }
 
-// console.log(retursDaysDifference(0,3));
+const returnsTames = function ( num ) {
+    const hour = Math.floor(num / 60 / 60);
+    const minutes = Math.floor(num / 60) - hour * 60;
+    const second = num % 60;
+    return String(hour) + 'ч:' + String(minutes) + 'м:' + String(second) + 'с';
+ }
+
+const returnsDifferenceInDays = function (num1,num2,num3,num4,num5,num6) {
+    let difference;
+
+    const dey1 = returnsSecond (num1,num2,num3);
+    const dey2 = returnsSecond (num4,num5,num6);
+
+    dey1 < dey2 ? difference = dey2 - dey1 : difference = dey1 - dey2;
+
+    return returnsTames(difference);
+}
+   
+
+   
+  let result = returnsDifferenceInDays(12,12,12,11,11,11);
+  console.log(result);
+   
+ alert(returnsDifferenceInDays(12,12,12,11,11,11));
 // ______________________________________________________________________
 
 // 4.* Определить количество цифр в введенном числе. Использовать % 
