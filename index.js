@@ -1433,7 +1433,7 @@
 // Используйте написанную ранее функцию, чтобы узнавать, 
 // совершенное число или нет.
 
-// const perfectNumber = function (num) {
+// const perfectNumber =  (num) => {
 //     const result = num;
 //     for (let index = 2; index <= result ; index++) {
 //         let divider = 0;
@@ -1480,6 +1480,7 @@
 
 
 // const timeFunct = function (num1,num2,num3) {
+    // isNaN(num1) || num1 === 0 ? num1 = '00' : num1 = num1;
 //     isNaN(num3) || num3 === 0 ? num3 = '00' : num3 = num3;
 //     isNaN(num2) || num2 === 0 ? num2 = '00' : num2 = num2;
 //     return String(num1) + 'ч:' + String(num2) + 'м:' + String(num3) + 'с';
@@ -1542,34 +1543,34 @@
 // узнайте разницу в секундах, а потом разницу переведите 
 // обратно в «чч:мм:сс»
 
-const returnsSecond = function (num1,num2,num3) {
-    return ( num1 * 60 + num2 ) * 60 + num3;
- }
+// const returnsSecond = function (num1,num2,num3) {
+//     return ( num1 * 60 + num2 ) * 60 + num3;
+//  }
 
-const returnsTames = function ( num ) {
-    const hour = Math.floor(num / 60 / 60);
-    const minutes = Math.floor(num / 60) - hour * 60;
-    const second = num % 60;
-    return String(hour) + 'ч:' + String(minutes) + 'м:' + String(second) + 'с';
- }
+// const returnsTames = function ( num ) {
+//     const hour = Math.floor(num / 60 / 60);
+//     const minutes = Math.floor(num / 60) - hour * 60;
+//     const second = num % 60;
+//     return String(hour) + 'ч:' + String(minutes) + 'м:' + String(second) + 'с';
+//  }
 
-const returnsDifferenceInDays = function (num1,num2,num3,num4,num5,num6) {
-    let difference;
+// const returnsDifferenceInDays = function (num1,num2,num3,num4,num5,num6) {
+//     let difference;
 
-    const dey1 = returnsSecond (num1,num2,num3);
-    const dey2 = returnsSecond (num4,num5,num6);
+//     const dey1 = returnsSecond (num1,num2,num3);
+//     const dey2 = returnsSecond (num4,num5,num6);
 
-    dey1 < dey2 ? difference = dey2 - dey1 : difference = dey1 - dey2;
+//     dey1 < dey2 ? difference = dey2 - dey1 : difference = dey1 - dey2;
 
-    return returnsTames(difference);
-}
+//     return returnsTames(difference);
+// }
    
 
    
-  let result = returnsDifferenceInDays(12,12,12,11,11,11);
-  console.log(result);
+//   let result = returnsDifferenceInDays(12,12,12,11,11,11);
+//   console.log(result);
    
- alert(returnsDifferenceInDays(12,12,12,11,11,11));
+//  alert(returnsDifferenceInDays(12,12,12,11,11,11));
 // ______________________________________________________________________
 
 // 4.* Определить количество цифр в введенном числе. Использовать % 
@@ -1680,3 +1681,377 @@ const returnsDifferenceInDays = function (num1,num2,num3,num4,num5,num6) {
 // if (userNum % 2 === 0 ||  userNum >= 100 ) {
 //     alert('поздравляю ты не батрак');
 // } else alert('пиздуй на строку батрак');
+
+
+
+// -____________________________________________________________________________
+
+// 0. Переписать все задания из предыдущего д.з. стрелочными функциеми.
+
+
+// ____________________Переделал_____________________
+// 1. Написать функцию, которая принимает 2 числа и возвращает -1,
+// если первое меньше, чем второе; 1 – если первое 
+// больше, чем второе; и 0 – если числа равны.
+
+
+// const comparison = (num1, num2) => {
+//     if (num1 < num2) {
+//         return -1;
+//     } else if (num1 > num2) {
+//         return 1;
+//     } else {
+//         return 0;
+//     } 
+// }
+
+// const result = comparison (1, 2);
+// console.log(result);
+
+// 2. Написать функцию, которая вычисляет факториал переданного ей числа.
+
+// const factorial = (num) => { 
+//     let factorial = num; 
+//     for (let index = 1; index < num; index++) {
+//         factorial *= index;
+//     }
+//     return factorial;
+// }
+
+// const result = factorial (5);
+// console.log(result);
+
+// 3. Написать функцию, которая принимает три отдельные 
+// цифры и превращает их в одно число. Например: цифры 
+// 1, 4, 9 превратятся в число 149.
+
+// const oneNumber = (num1,num2,num3) => String(num1) + String(num2) + String(num3);
+
+// console.log (oneNumber(1,2,3));
+
+// 4. Написать функцию, которая принимает длину и ширину 
+// прямоугольника и вычисляет его площадь. Если в функцию 
+// передали 1 параметр, то она вычисляет площадь квадрата.
+
+// const square = (num1,num2) => {
+//    if (!isNaN(num1) && !isNaN(num2) && num1 !== 0 && num2 !== 0 ) {
+//        return num1 * num2;
+//    } else if (num1 === 0 && num2 === 0 ) {
+//        return 'вычесление не возможно';
+//    } else if ( num1 === 0 ) {
+//        return num2 * num2;
+//    } else {
+//     return num1 * num1;
+//    }
+// }
+
+// const result = square (3,0);
+// alert (result);
+
+// 5. Написать функцию, которая проверяет, является ли переданное
+// ей число совершенным. Совершенное число – это 
+// число, равное сумме всех своих собственных делителей.
+
+// const perfectNumber = (num) => {
+//     let divider = 0;
+//     let summa = 0;
+//     const result = num;
+//     while (divider < num - 1) { 
+//         divider++; 
+//         if( result % divider === 0 ) {
+//             summa += divider;
+//             console.log(summa);
+//         }    
+// }
+// if (summa === result) {
+//     perfect =  'число ' + result + ' совершенное';
+//     return perfect;
+// } 
+// }
+// const result = perfectNumber(6);
+// console.log (result);
+
+// 6. Написать функцию, которая принимает минимальное и 
+// максимальное значения для диапазона, и выводит только 
+// те числа из диапазона, которые являются совершенными. 
+// Используйте написанную ранее функцию, чтобы узнавать, 
+// совершенное число или нет.
+
+
+// const perfectNumber = (amxNum,minNum) => {
+//     const result = amxNum;
+//     for ( minNum ; minNum <= result ; minNum++) {
+//         let divider = 0;
+//         let summa = 0;
+//         for ( let j = 0; j < minNum - 1; j++) { 
+//             divider = minNum % j;
+//             if(divider === 0 ) {
+//                 summa += j;
+//             }    
+//         }
+//         if (summa === minNum) {
+//             const perfect =  'число ' + minNum + ' совершенное';
+//             console.log(perfect);
+//         } 
+//     }
+// }
+// const result = perfectNumber(496,6);
+
+// 7. Написать функцию, которая принимает время (часы, минуты, секунды)
+// и выводит его на экран в формате «чч:мм:сс».
+// Если при вызове функции минуты и/или секунды не были 
+// переданы, то выводить их как 00.
+
+
+// const timeFunct = (num1,num2,num3) => {
+//     isNaN(num1) || num1 === 0 ? num1 = '00' : num1 = num1;
+//     isNaN(num3) || num3 === 0 ? num3 = '00' : num3 = num3;
+//     isNaN(num2) || num2 === 0 ? num2 = '00' : num2 = num2;
+//     return String(num1) + 'ч:' + String(num2) + 'м:' + String(num3) + 'с';
+//  }
+// console.log(timeFunct(12));
+
+// 8. Написать функцию, которая принимает часы, минуты и 
+// секунды и возвращает это время в секундах.
+
+// const returnsSecond = (num1,num2,num3) => {
+//    return ( num1 * 60 + num2 ) * 60 + num3;
+// }
+// console.log(returnsSecond(12,13,40));
+
+// 9. Написать функцию, которая принимает количество секунд, 
+// переводит их в часы, минуты и секунды и возвращает в 
+// виде строки «чч:мм:сс».
+
+// const returnsTames = ( num ) => {
+//    const hour = Math.floor(num / 60 / 60);
+//    const minutes = Math.floor(num / 60) - hour * 60;
+//    const second = num % 60;
+//    return mesege = String(hour) + 'ч:' + String(minutes) + 'м:' + String(second) + 'с';
+   
+// }
+// console.log(returnsTames (4378));
+
+
+// 10*. Написать функцию, которая считает разницу между датами. 
+// Функция принимает 6 параметров, которые описывают 2 
+// даты, и возвращает результат в виде строки «чч:мм:сс». При 
+// выполнении задания используйте функции из предыдущих 2-х заданий:
+// сначала обе даты переведите в секунды, 
+// узнайте разницу в секундах, а потом разницу переведите 
+// обратно в «чч:мм:сс»
+
+// const returnsSecond = (num1,num2,num3) => ( num1 * 60 + num2 ) * 60 + num3;
+ 
+
+// const returnsTames = ( num ) => {
+//     const hour = Math.floor(num / 60 / 60);
+//     const minutes = Math.floor(num / 60) - hour * 60;
+//     const second = num % 60;
+//     return String(hour) + 'ч:' + String(minutes) + 'м:' + String(second) + 'с';
+//  }
+
+// const returnsDifferenceInDays = (num1,num2,num3,num4,num5,num6) => {
+//     let difference;
+
+//     const dey1 = returnsSecond (num1,num2,num3);
+//     const dey2 = returnsSecond (num4,num5,num6);
+
+//     dey1 < dey2 ? difference = dey2 - dey1 : difference = dey1 - dey2;
+
+//     return returnsTames(difference);
+// }
+   
+
+   
+//   let result = returnsDifferenceInDays(12,12,12,11,11,11);
+//   console.log(result);
+ 
+
+// _______________________________НОВЫЕ_ЗАДАНИЯ_ОБЕКТЫ_____________________________________
+
+// Задание 1
+// Создать объект, описывающий автомобиль (производитель,
+// модель, год выпуска, средняя скорость).
+// Cледующие функции для работы с этим объектом.
+// 1. Функция для вывода на экран информации об автомобиле.
+// 2. Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью.
+// Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
+
+
+const Cars = function (model,yearIssue,averageSpeed) {
+    this.model = model;
+    this.yearIssue = yearIssue;
+    this.averageSpeed = averageSpeed;
+}
+
+const car1 = new Cars ('Renault', 2006, 90);
+
+// car1 = {
+//     model: 'Renault',
+//     yearIssue: 2006,
+//     averageSpeed: 90,
+// }
+const infoCar1 = () => console.log( `model - ${car1.model} \nyearIssue - ${car1.yearIssue} \naverageSpeed - ${car1.averageSpeed}`);
+infoCar1(car1);
+
+const  returnSecond = (time) => {
+    
+    let second = time * 60;
+
+    return returnsTames(second);
+}
+
+const returnsTames = ( num ) => {
+
+    let hour = Math.floor(num / 60 / 60);
+
+    const minutes = Math.floor(num / 60) - hour * 60 ;
+    const second = num % 60;
+    let relaxation = 0;
+    for (let index = 1 ; index < hour; index++) {
+        if (index % 4 === 0) {
+            relaxation++;
+        } 
+    }
+    console.log(`отдыхад ${relaxation} часа`)
+
+    hour = hour - relaxation;
+
+    return `${hour}ч:${minutes}м:${second}с`;
+}
+
+const distanceAverageSpeed = (distance) => {
+    let time = ( distance * 60 / `${car1.averageSpeed}` ); 
+
+    return returnSecond(time);
+}
+console.log(distanceAverageSpeed(1257));
+
+
+
+
+
+// Задание 2
+// Создать объект, хранящий в себе отдельно числитель и знаменатель дроби,
+// и следующие функции для работы с этим объектом.
+// 1. Функция сложения 2-х объектов-дробей.
+// 2. Функция вычитания 2-х объектов-дробей.
+// 3. Функция умножения 2-х объектов-дробей.
+// 4. Функция деления 2-х объектов-дробей.
+// 5. Функция сокращения объекта-дроби.
+// *Одну функция высшего поярдка(принимает колбэки: сложения,вычитания...)
+
+const numberatorDenominatorFraction = {
+    numerator : 2,
+    denominator : 4,
+}
+
+const returnAdditions = (numerator,denominator ) => {
+    let result = +numerator + +denominator;
+    return result;
+}
+const resultAdditions = returnAdditions(`${numberatorDenominatorFraction.numerator}`, `${numberatorDenominatorFraction.denominator}`);
+console.log(resultAdditions);
+
+
+const returnSubtraction = (numerator,denominator ) => {
+    let result = numerator - denominator;
+    return result;
+}
+const resultSubtraction = returnSubtraction(`${numberatorDenominatorFraction.numerator}`, `${numberatorDenominatorFraction.denominator}`)
+console.log(resultSubtraction);
+
+
+const returnMultiplication = (numerator,denominator ) => {
+    let result = numerator * denominator;
+    return result;
+}
+console.log(returnMultiplication(`${numberatorDenominatorFraction.numerator}`, `${numberatorDenominatorFraction.denominator}`));
+
+
+const returnDivision = (numerator,denominator ) => {
+    let result = numerator / denominator;
+    return result;
+}
+console.log(returnDivision(`${numberatorDenominatorFraction.numerator}`, `${numberatorDenominatorFraction.denominator}`));
+
+
+const higherOrderFunction = (func,numerator,denominator ) => {
+        return func(numerator,denominator)
+}
+console.log( higherOrderFunction(returnAdditions,`${numberatorDenominatorFraction.numerator}`, `${numberatorDenominatorFraction.denominator}`));
+console.log(higherOrderFunction(returnSubtraction,`${numberatorDenominatorFraction.numerator}`, `${numberatorDenominatorFraction.denominator}`));
+
+
+
+// Задание 3
+// Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом.
+// 1. Функция вывода времени на экран.
+// 2. Функция изменения времени на переданное количество
+// секунд.
+// 3. Функция изменения времени на переданное количество
+// минут.
+// 4. Функция изменения времени на переданное количество
+// часов.
+// Учтите, что в последних 3-х функциях, при изменении одной
+// части времени, может измениться и другая. Например: если ко
+// времени «20:30:45» добавить 30 секунд, то должно получиться
+// «20:31:15», а не «20:30:75».
+
+const date = {
+    hour: 12,
+    minutes: 30,
+    seconds: 45,
+}
+ 
+const retuenTime = () => {
+    return `${date.hour}:` +`${date.minutes}:` + `${date.seconds}.`;
+}
+
+const secondsToTime =(seconds) => {
+   const hour = Math.floor(seconds / 60 / 60);
+   const minutes = Math.floor(seconds / 60) - hour * 60 ;
+   const second = seconds % 60;
+   date.seconds += second;
+  
+   if(date.seconds > 59){
+       date.seconds = date.seconds % 60;
+       date.minutes += 1;
+   }
+   date.minutes += minutes;
+
+   if(date.minutes > 59){
+       date.minutes = 0
+       date.hour += 1;
+   }
+   date.hour += hour;
+   
+}
+
+const minutesToTime = (minute) => {
+    const second = minute * 60;
+
+    const hour = Math.floor(second / 60 / 60);
+    const minutes = Math.floor(second / 60) - hour * 60 ;
+    const seconds = second % 60;
+
+    date.seconds +=seconds;
+    date.minutes += minutes;
+    date.hour += hour;
+   
+    if(date.seconds > 59){
+        date.seconds = date.seconds % 60;;
+        date.minutes += 1;
+    }
+    if(date.minutes > 59){
+        date.minutes = date.minutes % 60; 
+        date.hour += 1;
+    }
+}
+
+const hoursToTime = (hours) => {
+    date.hour += hours;
+}
+
+
